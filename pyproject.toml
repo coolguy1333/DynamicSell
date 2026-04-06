@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dynamicsell"
+dynamic = ["version"]
+description = "Dynamic pricing helper toolkit for shop plugins"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "DynamicSell Contributors" }
+]
+keywords = ["pricing", "dynamic", "shop", "economy", "plugin"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent"
+]
+
+[project.urls]
+Homepage = "https://github.com/example/DynamicSell"
+Documentation = "https://github.com/example/DynamicSell/tree/main/docs"
+Repository = "https://github.com/example/DynamicSell"
+Issues = "https://github.com/example/DynamicSell/issues"
+
+[project.scripts]
+dynamicsell = "dynamicsell.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "dynamicsell._version.__version__"}
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
