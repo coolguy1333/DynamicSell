@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.4] - 2026-04-06
+### Changed
+- Resolved branch-conflict targets by consolidating CI/release behavior around Python + Java parity.
+- CI workflow now has explicit setup blocks and stable permissions while still building `dynamicsell.jar` and running full tests.
+- Release workflow now supports manual runs (`workflow_dispatch`) while only publishing artifacts on semver tag refs.
+- Documentation was synchronized to the same release/version expectations.
+
 ## [0.1.3] - 2026-04-06
 ### Added
 - Regression test locking the original pricing example output.

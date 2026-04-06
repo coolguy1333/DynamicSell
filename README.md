@@ -10,7 +10,7 @@ DynamicSell is an addon-oriented dynamic pricing toolkit that can be embedded in
 - Semantic versioning with a single source-of-truth version file.
 - GitHub release artifacts (wheel + source tarball + jar + checksums).
 - Regression tests lock the original pricing behavior, with Python/Java parity checks.
-- Unit tests and CI workflow.
+- CI and release workflows aligned for parity + artifact publishing.
 
 ## Install
 
@@ -25,7 +25,7 @@ pip install -e .
 From a tagged GitHub release artifact:
 
 ```bash
-pip install https://github.com/example/DynamicSell/releases/download/v0.1.3/dynamicsell-0.1.3-py3-none-any.whl
+pip install https://github.com/example/DynamicSell/releases/download/v0.1.4/dynamicsell-0.1.4-py3-none-any.whl
 ```
 
 ## Quick usage
@@ -49,6 +49,11 @@ Example output:
 price=128.00 multiplier=1.280 pressure=0.700
 ```
 
+## Original behavior guarantee
+
+- `tests/test_regression_original_behavior.py` locks the known original formula output.
+- `tests/test_java_parity.py` compares jar output to Python engine output over multiple scenarios.
+
 ## Project layout
 
 - `src/dynamicsell/engine.py` - core pricing logic.
@@ -63,7 +68,7 @@ price=128.00 multiplier=1.280 pressure=0.700
 ## Release process
 
 1. Update `src/dynamicsell/_version.py` and `CHANGELOG.md`.
-2. Commit changes and create tag (example: `v0.1.3`).
+2. Commit changes and create tag (example: `v0.1.4`).
 3. Push branch and tag to GitHub.
 4. The `Release` workflow builds Python artifacts and `dynamicsell.jar`, then publishes a GitHub release.
 

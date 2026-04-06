@@ -22,4 +22,4 @@ Final price = `base_price * clamp(multiplier, min_multiplier, max_multiplier)`.
 - Python package (`src/dynamicsell`) for scripting and integration.
 - Java package (`java/src/main/java/com/dynamicsell`) for JVM/plugin ecosystems.
 
-Both implementations intentionally use the same formula and defaults.
+Both implementations intentionally use the same formula and defaults, and parity is tested in CI.
